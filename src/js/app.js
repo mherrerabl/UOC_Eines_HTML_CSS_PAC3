@@ -73,7 +73,7 @@ $(function(){
 
     //Contingut swipers
     function contentImageCard(obj) {
-        return `<img src="${urlImages + obj.type.jpg.dpi[0]}"
+        return `<img loading="lazy" src="${urlImages + obj.type.jpg.dpi[0]}"
                     srcset="${urlImages + obj.type.jpg.dpi[0]}?as=webp 1x,
                             ${urlImages + obj.type.jpg.dpi[1]}?as=webp 2x,
                             ${urlImages + obj.type.jpg.dpi[2]}?as=webp 3x"
@@ -103,7 +103,7 @@ $(function(){
                             srcset="${chooseImage(obj, 0)}" 
                             type="image/jpg">
 
-                    <img src="${chooseImage(obj, 0)}" alt="${obj.alt}">
+                    <img loading="lazy" src="${chooseImage(obj, 0)}" alt="${obj.alt}">
                 </picture>`;
     }
 
@@ -272,7 +272,7 @@ $(function(){
                                                         <h3>${food.name}</h3>
                                                         <p>${food.description}</p>
                                                         <figure>
-                                                        <img src="${chooseImage(food.img, 1)}"
+                                                        <img loading="lazy" src="${chooseImage(food.img, 1)}"
                                                             srcset="${chooseImage(food.img, 0)}?as=webp 480w,
                                                                     ${chooseImage(food.img, 1)}?as=webp 850w"
                                                             sizes="(max-width: 849px) 100vw,
