@@ -82,9 +82,9 @@ export function contentImageCard(obj) {
                 srcset="${chooseImage(obj, 0, "webp")} 320w,
                         ${chooseImage(obj, 1, "webp")} 480w,
                         ${chooseImage(obj, 2, "webp")} 850w"
-                sizes="(max-width: 480px) 100vw,
+                sizes="(max-width: 480px) 90vw,
                         (max-width: 849px) 100vw,
-                        (min-width: 850px) 33vw"
+                        (min-width: 850px) 20vw"
                 alt="${obj.alt}">`;
 }
 //Contingut imatges dels punts d'interès (pàgina Detail)
