@@ -170,8 +170,8 @@ $(function(){
                                                         <img src="${chooseImage(food.img, 0, "jpg")}"
                                                             srcset="${chooseImage(food.img, 0, "webp")} 480w,
                                                                     ${chooseImage(food.img, 1, "webp")} 850w"
-                                                            sizes="(max-width: 849px) 90vw,
-                                                                    (min-width: 850px) 70vw"
+                                                            sizes="(max-width: 1000px) 90vw,
+                                                                    (min-width: 1001px) 50vw"
                                                             alt="${food.alt}"
                                                             width="300"
                                                             height="300">
