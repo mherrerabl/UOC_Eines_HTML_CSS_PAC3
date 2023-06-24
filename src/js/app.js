@@ -106,8 +106,8 @@ $(function(){
     //Rep l'id del enllaç selecionat i l'emmagatzema en localStorage
     let categoryClicked = localStorage.getItem("category");
     categoryClicked === "" ? categoryClicked = "architecture" : categoryClicked = categoryClicked;
-    let detailClicked = "accommodations";
-    categoryClicked = "accommodations"
+    let detailClicked = "arch1";
+    categoryClicked = "architecture"
     setDetail(".card a");
     setDetail(".navBigScreen a");
 
@@ -116,7 +116,7 @@ $(function(){
     //Verifica que sigui la pàgina Detail i crea el contingut de la pàgina
     if ($(".containerDetail")[0]) {
         const infoCategory = data[categoryClicked];
-        console.log("cat", categoryClicked);
+
         let breadcrumbCategory = "";
         if(categoryClicked === "architecture"){
             breadcrumbCategory = "Punts d'interès";
