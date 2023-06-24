@@ -83,9 +83,8 @@ export function contentImageCard(obj) {
     console.log("IMG1   ",chooseImage(obj, 2, "webp"));
     console.log("__________________________________",);
     return `<img loading="lazy" src="${urlImages + obj.type.jpg.url[0]}"
-                srcset="${chooseImage(obj, 2, "webp")} 850w,
-                        ${chooseImage(obj, 1, "webp")} 480w,
-                        ${chooseImage(obj, 0, "webp")} 320w"
+                srcset="${chooseImage(obj, 2, "webp")} 320w,
+                        ${chooseImage(obj, 1, "webp")} 480w"
                 sizes="(max-width: 600px) 90vw,
                         (max-width: 849px) 90vw,
                         (min-width: 850px) 33vw"
