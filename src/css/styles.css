@@ -258,10 +258,6 @@ object{
 }
 
 /**Slider Header2**/
-.containerHeader {
-    height: 30vw;
-}
-
 .slideHeaderSlim picture{
     min-width: 100%;
 }
