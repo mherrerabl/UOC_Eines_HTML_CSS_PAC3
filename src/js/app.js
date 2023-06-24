@@ -101,6 +101,7 @@ $(function(){
                                                     <h5>${obj.name}</h5>
                                                 </a>
                                                 </li>`);
+            $("#arch1").removeAttr("loading");
         });
     }
 
