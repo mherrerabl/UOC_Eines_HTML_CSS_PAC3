@@ -81,7 +81,6 @@ $(function(){
                                                                 </a>
                                                             </div>
                                                         </swiper-slide>`);
-                                                        console.log(obj.img[0]);
             });
     }
 
