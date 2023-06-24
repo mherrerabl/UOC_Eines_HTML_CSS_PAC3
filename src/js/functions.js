@@ -102,7 +102,36 @@ export function contentImageCard(obj) {
                 height="300">`;
 }
 //Contingut imatges dels punts d'interès (pàgina Detail)
+let firstImgArch = 0;
 export function contentImagesArchitecture(obj) {
+    if(firstImgArch === 0){
+        firstImgArch++;
+        return `<picture>
+        <source media="(min-width: 850px)" 
+                srcset="${chooseImage(obj, 2, "webp")}" 
+                type="image/webp">
+        <source media="(min-width: 480px)" 
+                srcset="${chooseImage(obj, 1, "webp")}" 
+                type="image/webp">
+        <source media="(max-width: 479px)" 
+                srcset="${chooseImage(obj, 0, "webp")}" 
+                type="image/webp">
+        
+        <source media="(min-width: 850px)" 
+                srcset="${chooseImage(obj, 2, "jpg")}" 
+                type="image/jpg">
+        <source media="(min-width: 480px)" 
+                srcset="${chooseImage(obj, 1, "jpg")}" 
+                type="image/jpg">
+        <source media="(max-width: 479px)" 
+                srcset="${chooseImage(obj, 0, "jpg")}" 
+                type="image/jpg">
+
+        <img src="${chooseImage(obj, 0, "jpg")}" alt="${obj.alt}"
+        width="300"
+        height="300">
+    </picture>`;
+    }
     return `<picture>
                 <source media="(min-width: 850px)" 
                         srcset="${chooseImage(obj, 2, "webp")}" 
