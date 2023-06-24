@@ -189,7 +189,6 @@ object{
 .logo{
     display: flex;
     align-items: center;
-    margin-top: 15px;
     margin-left: 15px;
     text-decoration: none;
 }
@@ -260,10 +259,12 @@ object{
 /**Slider Header2**/
 .slideHeaderSlim picture{
     min-width: 100%;
+    height: fit-content;
 }
 
 .slideHeaderSlim img{
     min-width: inherit;
+    height: 40vw;
 }
 
 
@@ -602,9 +603,6 @@ swiper-container swiper-slide h5{
 
 
     /**HEADER2**/
-    .containerHeader{
-        height: 25vw;
-    }
     
 
     /*****FOOTER*****/
