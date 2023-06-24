@@ -103,7 +103,7 @@ $(function(){
                                                 </li>`);
         });
     }
-
+    
     /*****DETAIL*****/
     //Rep l'id del enllaç selecionat i l'emmagatzema en localStorage
     let categoryClicked = localStorage.getItem("category");
@@ -156,18 +156,18 @@ $(function(){
         if(categoryClicked === "gastronomy"){
             const title = `<h2>${infoCategory.title}</h2>`;
             const objFoods = infoCategory.information;
-            $(".containerDetail article").addClass("gastronomy");
-            $(".containerDetail article").append(title);
+            $(".containerGastronomy article").addClass("gastronomy");
+            $(".containerGastronomy article").append(title);
 
             objFoods.forEach( food => {
                 $(".containerDetail article").append(`<section>
                                                         <h3>${food.name}</h3>
                                                         <p>${food.description}</p>
                                                         <figure>
-                                                        <img loading="lazy" src="${chooseImage(food.img, 1, "jpg")}"
+                                                        <img loading="lazy" src="${chooseImage(food.img, 0, "jpg")}"
                                                             srcset="${chooseImage(food.img, 0, "webp")} 480w,
                                                                     ${chooseImage(food.img, 1, "webp")} 850w"
-                                                            sizes="(max-width: 849px) 100vw,
+                                                            sizes="(max-width: 849px) 90vw,
                                                                     (min-width: 850px) 50vw"
                                                             alt="${food.img.alt}"
                                                             width="300"
