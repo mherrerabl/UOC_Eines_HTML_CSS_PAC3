@@ -175,12 +175,12 @@
                             },
                             "webp": {
                                 "url": [
-                                    "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_320.webp",
                                     "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_480.webp",
                                     "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_850.webp",
                                     "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_1200.webp"
                                 ],
                                 "art": [
+                                    "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_320_art.webp",
                                     "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_480_art.webp",
                                     "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_850_art.webp"
                                 ],
