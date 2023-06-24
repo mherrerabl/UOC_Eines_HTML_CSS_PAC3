@@ -159,8 +159,27 @@ $(function(){
             $(".containerGastronomy article").addClass("gastronomy");
             $(".containerGastronomy article").append(title);
 
+            let firstImgGastronomy = 0;
             objFoods.forEach( food => {
-                $(".containerDetail article").append(`<section>
+                if(firstImgGastronomy === 0){
+                    firstImgGastronomy++;
+                    $(".containerGastronomy article").append(`<section>
+                                                        <h3>${food.name}</h3>
+                                                        <p>${food.description}</p>
+                                                        <figure>
+                                                        <img src="${chooseImage(food.img, 0, "jpg")}"
+                                                            srcset="${chooseImage(food.img, 0, "webp")} 480w,
+                                                                    ${chooseImage(food.img, 1, "webp")} 850w"
+                                                            sizes="(max-width: 849px) 80vw,
+                                                                    (min-width: 850px) 50vw"
+                                                            alt="${food.img.alt}"
+                                                            width="300"
+                                                            height="300">
+                                                            <figcaption><a class="figcaptionLink" href="${food.attribution.url}">${food.attribution.author}</a></figcaption>
+                                                        </figure>
+                                                    </section>`);
+                }else{
+                    $(".containerGastronomy article").append(`<section>
                                                         <h3>${food.name}</h3>
                                                         <p>${food.description}</p>
                                                         <figure>
@@ -174,8 +193,8 @@ $(function(){
                                                             height="300">
                                                             <figcaption><a class="figcaptionLink" href="${food.attribution.url}">${food.attribution.author}</a></figcaption>
                                                         </figure>
-
                                                     </section>`);
+                }
             });
                 
         }
