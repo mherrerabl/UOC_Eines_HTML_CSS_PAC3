@@ -119,6 +119,7 @@ figure{
 
 figure img{
     width: 100%;
+    height: auto;
 }
 
 figcaption{
@@ -577,6 +578,7 @@ swiper-container swiper-slide h5{
     padding-top: 15px;
     padding-bottom: 15px;
 }
+
 
 
 
