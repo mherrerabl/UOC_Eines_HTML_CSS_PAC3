@@ -249,7 +249,7 @@ object{
 
 /**header2**/
 .containerHeader{
-    height: 150px;
+    height: fit-content;
     overflow-y: hidden;
 }
 
