@@ -90,15 +90,7 @@ export function contentImagesArchitecture(obj) {
                         srcset="${chooseImage(obj, 0)}?as=webp" 
                         type="image/webp">
                 
-                <source media="(min-width: 850px)" 
-                        srcset="${chooseImage(obj, 2)}" 
-                        type="image/jpg">
-                <source media="(min-width: 480px)" 
-                        srcset="${chooseImage(obj, 1)}" 
-                        type="image/jpg">
-                <source media="(max-width: 479px)" 
-                        srcset="${chooseImage(obj, 0)}" 
-                        type="image/jpg">
+            
 
                 <img loading="lazy" src="${chooseImage(obj, 0)}" alt="${obj.alt}">
             </picture>`;
