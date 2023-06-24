@@ -78,11 +78,13 @@ export function chooseImage(obj, indexUrl, format){
 
 //Contingut swipers
 export function contentImageCard(obj) {
-    return `<img loading="lazy" src="${urlImages + obj.type.jpg.dpi[0]}"
-                srcset="${urlImages + obj.type.webp.dpi[0]} 1x,
-                        ${urlImages + obj.type.webp.dpi[1]} 2x,
-                        ${urlImages + obj.type.webp.dpi[2]} 3x"
-
+    return `<img loading="lazy" src="${urlImages + obj.type.jpg.url[0]}"
+                srcset="${urlImages + obj.type.webp.dpi[0]} 320w,
+                        ${urlImages + obj.type.webp.dpi[1]} 480w,
+                        ${urlImages + obj.type.webp.dpi[2]} 850w"
+                sizes="(max-width: 480px) 100vw,
+                        (max-width: 849px) 100vw,
+                        (min-width: 850px) 33vw"
                 alt="${obj.alt}">`;
 }
 //Contingut imatges dels punts d'interès (pàgina Detail)
