@@ -78,17 +78,15 @@ export function chooseImage(obj, indexUrl, format){
 
 //Contingut swipers
 export function contentImageCard(obj) {
-    console.log("IMG1   ",chooseImage(obj, 0, "webp"));
-    console.log("IMG1   ",chooseImage(obj, 1, "webp"));
-    console.log("IMG1   ",chooseImage(obj, 2, "webp"));
-    console.log("__________________________________",);
     return `<img loading="lazy" src="${urlImages + obj.type.jpg.url[0]}"
                 srcset="${chooseImage(obj, 2, "webp")} 320w,
                         ${chooseImage(obj, 1, "webp")} 480w"
                 sizes="(max-width: 600px) 90vw,
                         (max-width: 849px) 90vw,
                         (min-width: 850px) 33vw"
-                alt="${obj.alt}">`;
+                alt="${obj.alt}"
+                width="300"
+                height="300">`;
 }
 //Contingut imatges dels punts d'interès (pàgina Detail)
 export function contentImagesArchitecture(obj) {
@@ -113,7 +111,9 @@ export function contentImagesArchitecture(obj) {
                         srcset="${chooseImage(obj, 0, "jpg")}" 
                         type="image/jpg">
 
-                <img loading="lazy" src="${chooseImage(obj, 0, "jpg")}" alt="${obj.alt}">
+                <img loading="lazy" src="${chooseImage(obj, 0, "jpg")}" alt="${obj.alt}"
+                width="300"
+                height="300">
             </picture>`;
 }
 

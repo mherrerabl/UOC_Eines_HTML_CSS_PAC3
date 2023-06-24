@@ -169,7 +169,9 @@ $(function(){
                                                                     ${chooseImage(food.img, 1, "webp")} 850w"
                                                             sizes="(max-width: 849px) 100vw,
                                                                     (min-width: 850px) 50vw"
-                                                            alt="${food.img.alt}">
+                                                            alt="${food.img.alt}"
+                                                            width="300"
+                                                            height="300">
                                                             <figcaption><a class="figcaptionLink" href="${food.attribution.url}">${food.attribution.author}</a></figcaption>
                                                         </figure>
 
