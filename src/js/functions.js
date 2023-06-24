@@ -78,6 +78,17 @@ export function chooseImage(obj, indexUrl, format){
 
 //Contingut swipers
 export function contentImageCard(obj) {
+    if(obj.id === "arch1"){
+        return `<img src="${urlImages + obj.type.jpg.url[0]}"
+        srcset="${chooseImage(obj, 2, "webp")} 320w,
+                ${chooseImage(obj, 1, "webp")} 480w"
+        sizes="(max-width: 600px) 90vw,
+                (max-width: 849px) 90vw,
+                (min-width: 850px) 33vw"
+        alt="${obj.alt}"
+        width="300"
+        height="300">`;
+    }
     return `<img loading="lazy" src="${urlImages + obj.type.jpg.url[0]}"
                 srcset="${chooseImage(obj, 2, "webp")} 320w,
                         ${chooseImage(obj, 1, "webp")} 480w"
