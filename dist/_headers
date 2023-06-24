@@ -1,2 +1,8 @@
 /*
 cache-control: max-age=31536000
+
+https://b.tile.openstreetmap.fr/osmfr/*
+cache-control: max-age=31536000
+
+https://raw.githubusercontent.com/mherrerabl/UOC_Eines_HTML_CSS_PAC3/main/*
+cache-control: max-age=31536000
