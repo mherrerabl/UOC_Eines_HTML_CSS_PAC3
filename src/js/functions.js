@@ -1,7 +1,7 @@
 import * as $  from "jquery";
 
 /**********GENEREAL VARIABLES***********/
-const urlImages = "https://raw.githubusercontent.com/mherrerabl/UOC_Eines_HTML_CSS_PAC2/main/";
+export const urlImages = "https://raw.githubusercontent.com/mherrerabl/UOC_Eines_HTML_CSS_PAC2/main/";
 
 /**********GENEREAL FUNCTIONS***********/
 //Modifica la variable de la categoria clicada
