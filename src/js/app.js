@@ -107,7 +107,7 @@ $(function(){
     let categoryClicked = localStorage.getItem("category");
     categoryClicked === "" ? categoryClicked = "architecture" : categoryClicked = categoryClicked;
     let detailClicked = "gastronomy";
-
+    categoryClicked = "gastronomy"
     setDetail(".card a");
     setDetail(".navBigScreen a");
 
