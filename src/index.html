@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <!--<link rel="preload" href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" as="font">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap" as="font">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@500;700;800&display=swap" as="font">-->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="/favicon.ico">
-    <script async src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
-    <script async src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-    <script async type="module" src="js/app.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+    <script defer src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script defer type="module" src="js/app.js"></script>
     <title>Hōmon Nara</title>
 </head>
 <body>  
@@ -36,7 +39,7 @@
             </div>     
         </nav>
         <div class="slideHeader">
-            <img src="/src/img/architecture/heijo-kyu/heijo-kyu_1/jpg/heijo-kyu_1_480.jpg" 
+            <img loading="lazy" src="/src/img/architecture/heijo-kyu/heijo-kyu_1/jpg/heijo-kyu_1_480.jpg" 
             srcset="/src/img/architecture/heijo-kyu/heijo-kyu_1/jpg/heijo-kyu_1_480.jpg 480w,
                         /src/img/architecture/heijo-kyu/heijo-kyu_1/jpg/heijo-kyu_1_850.jpg 850w,
                         /src/img/architecture/heijo-kyu/heijo-kyu_1/jpg/heijo-kyu_1_1200.jpg 1200w"
@@ -48,7 +51,7 @@
                 alt="Palau Heijō-Kyu"
                 class="mySlides">
 
-            <img src="img/architecture/nara_park/nara_park_1/jpg/nara_park_1_480.jpg"
+            <img loading="lazy" src="img/architecture/nara_park/nara_park_1/jpg/nara_park_1_480.jpg"
                 srcset="img/architecture/nara_park/nara_park_1/jpg/nara_park_1_480.jpg 480w,
                         img/architecture/nara_park/nara_park_1/jpg/nara_park_1_850.jpg 850w,
                         img/architecture/nara_park/nara_park_1/jpg/nara_park_1_1200.jpg 1200w"
@@ -59,7 +62,7 @@
                  alt="Parc Nara" 
                  class="mySlides">
 
-            <img src="img/architecture/horyu-ji/horyu-ji_1/jpg/horyu-ji_1_480.jpg"
+            <img loading="lazy" src="img/architecture/horyu-ji/horyu-ji_1/jpg/horyu-ji_1_480.jpg"
                 srcset="img/architecture/horyu-ji/horyu-ji_1/jpg/horyu-ji_1_480.jpg 480w,
                         img/architecture/horyu-ji/horyu-ji_1/jpg/horyu-ji_1_850.jpg 850w,
                         img/architecture/horyu-ji/horyu-ji_1/jpg/horyu-ji_1_1200.jpg 1200w"
@@ -70,7 +73,7 @@
                  alt="Temple Hōryū-ji" 
                  class="mySlides">
 
-            <img src="img/architecture/kofukuji/kofukuji_1//jpg/kofukuji_1_480.jpg"
+            <img loading="lazy" src="img/architecture/kofukuji/kofukuji_1//jpg/kofukuji_1_480.jpg"
                 srcset="img/architecture/kofukuji/kofukuji_1/jpg/kofukuji_1_480.jpg 480w,
                         img/architecture/kofukuji/kofukuji_1/jpg/kofukuji_1_850.jpg 850w,
                         img/architecture/kofukuji/kofukuji_1/jpg/kofukuji_1_1200.jpg 1200w"
