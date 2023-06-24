@@ -175,6 +175,7 @@
                             },
                             "webp": {
                                 "url": [
+                                    "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_320.webp",
                                     "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_480.webp",
                                     "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_850.webp",
                                     "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_1200.webp"
@@ -184,9 +185,9 @@
                                     "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_850_art.webp"
                                 ],
                                 "dpi": [
-                                    "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_480_art.webp",
-                                    "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_480_art_2x.webp",
-                                    "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_480_art_3x.webp"
+                                    "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_850_art.webp",
+                                    "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_850_art_2x.webp",
+                                    "src/img/architecture/nara_park/nara_park_1/webp/nara_park_1_850_art_3x.webp"
                                 ]
                             }
                         },
@@ -287,14 +288,15 @@
                             },
                             "webp": {
                                 "url": [
+                                    "src/img/architecture/todai-ji/todai-ji_1/webp/todai-ji_1_320.webp",
                                     "src/img/architecture/todai-ji/todai-ji_1/webp/todai-ji_1_480.webp",
                                     "src/img/architecture/todai-ji/todai-ji_1/webp/todai-ji_1_850.webp",
                                     "src/img/architecture/todai-ji/todai-ji_1/webp/todai-ji_1_1200.webp"
                                 ],
                                 "dpi": [
-                                    "src/img/architecture/todai-ji/todai-ji_1/webp/todai-ji_1_480.webp",
-                                    "src/img/architecture/todai-ji/todai-ji_1/webp/todai-ji_1_480_2x.webp",
-                                    "src/img/architecture/todai-ji/todai-ji_1/webp/todai-ji_1_480_3x.webp"
+                                    "src/img/architecture/todai-ji/todai-ji_1/webp/todai-ji_1_850.webp",
+                                    "src/img/architecture/todai-ji/todai-ji_1/webp/todai-ji_1_850_2x.webp",
+                                    "src/img/architecture/todai-ji/todai-ji_1/webp/todai-ji_1_850_3x.webp"
                                 ]
                             }
                         },
@@ -413,13 +415,14 @@
                                     "src/img/architecture/kasuga-taisha/kasuga-taisha_1/webp/kasuga-taisha_1_1200.webp"
                                 ],
                                 "art": [
+                                    "src/img/architecture/kasuga-taisha/kasuga-taisha_1/webp/kasuga-taisha_1_320_art.webp",
                                     "src/img/architecture/kasuga-taisha/kasuga-taisha_1/webp/kasuga-taisha_1_480_art.webp",
                                     "src/img/architecture/kasuga-taisha/kasuga-taisha_1/webp/kasuga-taisha_1_850_art.webp"
                                 ],
                                 "dpi": [
-                                    "src/img/architecture/kasuga-taisha/kasuga-taisha_1/webp/kasuga-taisha_1_480_art.webp",
-                                    "src/img/architecture/kasuga-taisha/kasuga-taisha_1/webp/kasuga-taisha_1_480_art_2x.webp",
-                                    "src/img/architecture/kasuga-taisha/kasuga-taisha_1/webp/kasuga-taisha_1_480_art_3x.webp"
+                                    "src/img/architecture/kasuga-taisha/kasuga-taisha_1/webp/kasuga-taisha_1_850_art.webp",
+                                    "src/img/architecture/kasuga-taisha/kasuga-taisha_1/webp/kasuga-taisha_1_850_art_2x.webp",
+                                    "src/img/architecture/kasuga-taisha/kasuga-taisha_1/webp/kasuga-taisha_1_850_art_3x.webp"
                                 ]
                             }
                             
@@ -529,13 +532,14 @@
                                     "src/img/architecture/kofukuji/kofukuji_1/webp/kofukuji_1_1200.webp"
                                 ],
                                 "art": [
+                                    "src/img/architecture/kofukuji/kofukuji_1/webp/kofukuji_1_320_art.webp",
                                     "src/img/architecture/kofukuji/kofukuji_1/webp/kofukuji_1_480_art.webp",
                                     "src/img/architecture/kofukuji/kofukuji_1/webp/kofukuji_1_850_art.webp"
                                 ],
                                 "dpi": [
-                                    "src/img/architecture/kofukuji/kofukuji_1/webp/kofukuji_1_480_art.webp",
-                                    "src/img/architecture/kofukuji/kofukuji_1/webp/kofukuji_1_480_art_2x.webp",
-                                    "src/img/architecture/kofukuji/kofukuji_1/webp/kofukuji_1_480_art_3x.webp"
+                                    "src/img/architecture/kofukuji/kofukuji_1/webp/kofukuji_1_850_art.webp",
+                                    "src/img/architecture/kofukuji/kofukuji_1/webp/kofukuji_1_850_art_2x.webp",
+                                    "src/img/architecture/kofukuji/kofukuji_1/webp/kofukuji_1_850_art_3x.webp"
                                 ]
                             }
                         },
@@ -636,6 +640,7 @@
                                     "src/img/architecture/horyu-ji/horyu-ji_1/webp/horyu-ji_1_1200.webp"
                                 ],
                                 "art": [
+                                    "src/img/architecture/horyu-ji/horyu-ji_1/webp/horyu-ji_1_320_art.webp",
                                     "src/img/architecture/horyu-ji/horyu-ji_1/webp/horyu-ji_1_480_art.webp",
                                     "src/img/architecture/horyu-ji/horyu-ji_1/webp/horyu-ji_1_850_art.webp"
                                 ],
@@ -753,6 +758,7 @@
                                     "src/img/architecture/heijo-kyu/heijo-kyu_1/webp/heijo-kyu_1_1200.webp"
                                 ],
                                 "art": [
+                                    "src/img/architecture/heijo-kyu/heijo-kyu_1/webp/heijo-kyu_1_320_art.webp",
                                     "src/img/architecture/heijo-kyu/heijo-kyu_1/webp/heijo-kyu_1_480_art.webp",
                                     "src/img/architecture/heijo-kyu/heijo-kyu_1/webp/heijo-kyu_1_850_art.webp"
                                 ],
