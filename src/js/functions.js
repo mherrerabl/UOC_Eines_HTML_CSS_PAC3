@@ -29,7 +29,7 @@ export function createMap(el, latitude, altitude, img, alt, title, zoom){
         zoom: zoom
     }
 
-    const imgWEBP = 'http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png?as=webp';
+    const imgWEBP = 'http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png';
     const map = new L.map(el, mapOptions);
     const layer = new L.TileLayer(imgWEBP);
 
@@ -60,20 +60,28 @@ export function gridSwiper(wWidth) {
 }
 
 //Retorna la url de la imatge segons si te art direction o no
-export function chooseImage(obj, indexUrl){
-    if(obj.type.jpg.art != undefined && indexUrl < 2){
-        return urlImages + obj.type.jpg.art[indexUrl];
+export function chooseImage(obj, indexUrl, format){
+    if(format === "webp"){
+        if(obj.type.webp.art != undefined && indexUrl < 2){
+            return urlImages + obj.type.webp.art[indexUrl];
+        }else{
+            return urlImages + obj.type.webp.url[indexUrl];
+        }
     }else{
-        return urlImages + obj.type.jpg.url[indexUrl];
+        if(obj.type.jpg.art != undefined && indexUrl < 2){
+            return urlImages + obj.type.jpg.art[indexUrl];
+        }else{
+            return urlImages + obj.type.jpg.url[indexUrl];
+        }
     }
 }
 
 //Contingut swipers
 export function contentImageCard(obj) {
     return `<img loading="lazy" src="${urlImages + obj.type.jpg.dpi[0]}"
-                srcset="${urlImages + obj.type.jpg.dpi[0]}?as=webp 1x,
-                        ${urlImages + obj.type.jpg.dpi[1]}?as=webp 2x,
-                        ${urlImages + obj.type.jpg.dpi[2]}?as=webp 3x"
+                srcset="${urlImages + obj.type.webp.dpi[0]} 1x,
+                        ${urlImages + obj.type.webp.dpi[1]} 2x,
+                        ${urlImages + obj.type.webp.dpi[2]} 3x"
 
                 alt="${obj.alt}">`;
 }
@@ -81,18 +89,26 @@ export function contentImageCard(obj) {
 export function contentImagesArchitecture(obj) {
     return `<picture>
                 <source media="(min-width: 850px)" 
-                        srcset="${chooseImage(obj, 2)}?as=webp" 
+                        srcset="${chooseImage(obj, 2, "webp")}" 
                         type="image/webp">
                 <source media="(min-width: 480px)" 
-                        srcset="${chooseImage(obj, 1)}?as=webp" 
+                        srcset="${chooseImage(obj, 1, "webp")}" 
                         type="image/webp">
                 <source media="(max-width: 479px)" 
-                        srcset="${chooseImage(obj, 0)}?as=webp" 
+                        srcset="${chooseImage(obj, 0, "webp")}" 
                         type="image/webp">
                 
-            
+                <source media="(min-width: 850px)" 
+                        srcset="${chooseImage(obj, 2, "jpg")}" 
+                        type="image/jpg">
+                <source media="(min-width: 480px)" 
+                        srcset="${chooseImage(obj, 1, "jpg")}" 
+                        type="image/jpg">
+                <source media="(max-width: 479px)" 
+                        srcset="${chooseImage(obj, 0, "jpg")}" 
+                        type="image/jpg">
 
-                <img loading="lazy" src="${chooseImage(obj, 0)}" alt="${obj.alt}">
+                <img loading="lazy" src="${chooseImage(obj, 0, "jpg")}" alt="${obj.alt}">
             </picture>`;
 }
 

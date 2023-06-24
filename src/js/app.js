@@ -81,6 +81,7 @@ $(function(){
                                                                 </a>
                                                             </div>
                                                         </swiper-slide>`);
+                                                        console.log(obj.img[0]);
             });
     }
 
@@ -162,9 +163,9 @@ $(function(){
                                                         <h3>${food.name}</h3>
                                                         <p>${food.description}</p>
                                                         <figure>
-                                                        <img loading="lazy" src="${chooseImage(food.img, 1)}"
-                                                            srcset="${chooseImage(food.img, 0)}?as=webp 480w,
-                                                                    ${chooseImage(food.img, 1)}?as=webp 850w"
+                                                        <img loading="lazy" src="${chooseImage(food.img, 1, "jpg")}"
+                                                            srcset="${chooseImage(food.img, 0, "webp")} 480w,
+                                                                    ${chooseImage(food.img, 1, "webp")} 850w"
                                                             sizes="(max-width: 849px) 100vw,
                                                                     (min-width: 850px) 50vw"
                                                             alt="${food.img.alt}">
