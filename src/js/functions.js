@@ -79,9 +79,9 @@ export function chooseImage(obj, indexUrl, format){
 //Contingut swipers
 export function contentImageCard(obj) {
     return `<img loading="lazy" src="${urlImages + obj.type.jpg.url[0]}"
-                srcset="${urlImages + obj.type.webp.dpi[0]} 320w,
-                        ${urlImages + obj.type.webp.dpi[1]} 480w,
-                        ${urlImages + obj.type.webp.dpi[2]} 850w"
+                srcset="${chooseImage(obj, 0, "webp")} 320w,
+                        ${chooseImage(obj, 1, "webp")} 480w,
+                        ${chooseImage(obj, 2, "webp")} 850w"
                 sizes="(max-width: 480px) 100vw,
                         (max-width: 849px) 100vw,
                         (min-width: 850px) 33vw"
