@@ -879,10 +879,6 @@ swiper-container swiper-slide h5{
     .indexHeader{
         max-height: 700px;
     }
-    
-    .indexHeader nav .mainNav{
-        padding-top: 25px;
-    }
 
     .indexHeader .mainNav ul{
         grid-column-start: 3;
