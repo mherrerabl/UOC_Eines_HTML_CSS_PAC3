@@ -53,6 +53,8 @@ $(function(){
         x[i].style.display = "none";
     }
     x[slideIndex-1].style.display = "inline-block";
+    x[slideIndex-1].style.width = "100%";
+    x[slideIndex-1].style.height = "auto";
     }
 
     let n = 1;
