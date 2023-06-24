@@ -1,0 +1,954 @@
+@import "https://fonts.googleapis.com/css2?family=Aboreto&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@500;700;800&display=swap";
+:root {
+  --mainColor: #006612;
+  --main2Color: #b3102e;
+  --textColor: #000;
+  --background: #ededed;
+  --swiper-theme-color: var(--mainColor);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header h1 {
+  color: var(--mainColor);
+  font-family: Aboreto, cursive;
+  font-size: 7vw;
+}
+
+footer h2 {
+  color: var(--mainColor);
+  margin-bottom: 0;
+  font-family: Aboreto, cursive;
+  font-size: 4rem;
+}
+
+h2 {
+  overflow-wrap: break-word;
+  margin-bottom: 25px;
+  font-family: Encode Sans SC, sans-serif;
+  font-size: 3rem;
+}
+
+h3 {
+  overflow-wrap: break-word;
+  font-family: Encode Sans SC, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+h4 {
+  font-family: Encode Sans SC, sans-serif;
+  font-size: 2rem;
+}
+
+h5 {
+  font-family: Palanquin, sans-serif;
+  font-size: 2rem;
+}
+
+p, li, a {
+  color: var(--textColor);
+  font-family: Palanquin, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+li {
+  list-style: none;
+}
+
+a:not(.logo, .card a, .menu a) {
+  overflow-wrap: anywhere;
+  background-image: linear-gradient(to right, var(--main2Color), var(--main2Color) 50%, #000 50%);
+  color: #0000;
+  background-position: -100%;
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding: 5px 0;
+  text-decoration: none;
+  transition: all .3s ease-out;
+  display: inline-block;
+  position: relative;
+}
+
+a:not(.logo, .card a, .menu a):before {
+  content: "";
+  background: var(--main2Color);
+  width: 0;
+  height: 2px;
+  transition: all .3s ease-out;
+  display: block;
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 25px;
+  line-height: 2.8rem;
+}
+
+.logoName {
+  word-break: normal;
+}
+
+figure {
+  margin-bottom: 25px;
+}
+
+figure img {
+  width: 100%;
+}
+
+figcaption {
+  text-align: end;
+  margin-top: 5px;
+}
+
+figure > figcaption > .figcaptionLink {
+  -webkit-text-decoration: underline var(--mainColor) 2px;
+  text-decoration: underline var(--mainColor) 2px;
+  font-size: 1.4rem;
+}
+
+a.btn {
+  background: var(--mainColor);
+  text-align: center;
+  color: var(--background);
+  border-radius: 5px;
+}
+
+.fa-2xl {
+  margin-right: 5px;
+  font-size: 2.5rem;
+}
+
+.indexHeader {
+  height: 45vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.indexHeader a {
+  font-weight: 600;
+}
+
+.indexHeader .navBigScreen {
+  display: none;
+}
+
+.indexHeader nav .mainNav .navBigScreen > li > a {
+  -webkit-text-decoration: underline var(--mainColor) 2px;
+  text-decoration: underline var(--mainColor) 2px;
+}
+
+.indexHeader nav {
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #0000, #ffffffb3);
+  position: absolute;
+}
+
+.indexHeader .slimNav {
+  background-color: #ffffff80;
+}
+
+object {
+  width: 25vw;
+  max-width: 125px;
+  max-height: 100%;
+  pointer-events: none;
+}
+
+.logo {
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 15px;
+  text-decoration: none;
+  display: flex;
+}
+
+.logo:not(.logoIndex) {
+  cursor: pointer;
+}
+
+.logo h1, .logo h2 {
+  margin-left: 5px;
+}
+
+.logoHover {
+  opacity: 0;
+  position: absolute;
+}
+
+.indexHeader nav .dropdown i {
+  cursor: pointer;
+  position: absolute;
+  bottom: 35px;
+  right: 25px;
+}
+
+.menu ul {
+  background: var(--background);
+  width: 100%;
+  text-align: end;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu li a {
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 7px 25px;
+  text-decoration: none;
+  display: block;
+}
+
+.indexHeader .slideHeader {
+  width: 100%;
+  height: inherit;
+  position: relative;
+}
+
+.slideHeader img {
+  max-width: 100%;
+  display: none;
+}
+
+.containerHeader {
+  height: 150px;
+  overflow-y: hidden;
+}
+
+.containerHeader .swiper img {
+  height: auto;
+}
+
+.containerHeader {
+  height: 30vw;
+}
+
+.slideHeaderSlim picture {
+  min-width: 100%;
+}
+
+.slideHeaderSlim img {
+  min-width: inherit;
+}
+
+footer {
+  background: var(--background);
+  grid-gap: 0;
+  grid-template-columns: 100%;
+  padding-top: 25px;
+  display: grid;
+}
+
+footer > div:first-child {
+  margin: 15px auto;
+}
+
+footer > div .logoName {
+  padding: 0;
+}
+
+footer h4 {
+  padding-bottom: 15px;
+}
+
+footer div:not(:last-child, :first-child) {
+  justify-self: left;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 35px;
+}
+
+footer div:not(:last-child, :first-child) a {
+  margin-left: 15px;
+}
+
+footer div:not(:last-child, :first-child) li {
+  padding-bottom: 15px;
+}
+
+footer div:first-child {
+  padding-bottom: 0;
+}
+
+footer > div:last-child {
+  background: var(--mainColor);
+  padding: 15px 0;
+}
+
+footer > div:last-child ul {
+  grid-template-columns: auto;
+  display: grid;
+}
+
+footer > div:last-child li {
+  justify-items: center;
+  display: grid;
+}
+
+footer > div:last-child li a {
+  font-weight: 600;
+  background-image: linear-gradient(to right, var(--main2Color), var(--main2Color) 50%, var(--background) 50%) !important;
+}
+
+.breadcrumbs .separator {
+  margin: 0 15px;
+}
+
+.breadcrumbs .currentPage {
+  color: var(--main2Color);
+  font-weight: 700;
+}
+
+.containerIndex {
+  margin: 50px 25px;
+}
+
+.containerIndex > section {
+  margin-bottom: 70px;
+}
+
+.containerIndex > section:first-child > div {
+  clip-path: polygon(50% 0%, 100% 25%, 95% 100%, 5% 100%, 0% 25%);
+  background-color: #eecfac;
+  margin: 25px 0;
+}
+
+.containerIndex > section:first-child img {
+  width: 100%;
+  clip-path: polygon(50% 2.5vh, calc(100% - 2.5vh) calc(25% + 4.5vh), calc(95% - 1.5vh) 100%, calc(5% + 1.5vh) 100%, 2.5vh calc(25% + 4.5vh));
+}
+
+.containerIndex > section:first-child > div {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.containerIndex > section:first-child > div > h2 {
+  text-align: center;
+  margin: 0;
+  padding: 25px;
+  font-family: Encode Sans SC, sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.containerIndex > section:first-child > div > h2 > span {
+  margin-top: 15px;
+  font-size: 2rem;
+  display: block;
+}
+
+.containerIndex .about ul {
+  margin-bottom: 50px;
+}
+
+.containerIndex .about li {
+  margin-bottom: 15px;
+  margin-left: 50px;
+  list-style: disc;
+}
+
+.divSwiper {
+  height: max-content;
+  padding: 25px 0;
+  overflow: hidden;
+}
+
+swiper-container {
+  height: max-content;
+  overflow: visible;
+}
+
+swiper-slide {
+  height: max-content;
+}
+
+swiper-container .card {
+  text-align: center;
+  background: var(--background);
+  padding-bottom: 35px;
+  display: block;
+}
+
+swiper-slide picture {
+  display: block;
+}
+
+swiper-slide img {
+  width: 100%;
+  height: 200px;
+}
+
+swiper-container swiper-slide h5 {
+  margin-top: 15px;
+}
+
+.containerIndex #mapIndex {
+  width: 100%;
+  height: 600px;
+}
+
+.container {
+  margin: 25px 25px 50px;
+}
+
+.container h2 {
+  margin-bottom: 25px;
+}
+
+.container h3 {
+  margin-bottom: 15px;
+}
+
+.containerLinks ul {
+  margin-bottom: 25px;
+}
+
+.containerLinks li {
+  margin-bottom: 15px;
+  margin-left: 25px;
+  list-style-type: disc;
+}
+
+.containerLinks a:not(.breadcrumbs a) {
+  text-decoration: underline;
+  background-image: linear-gradient(to right, var(--main2Color), var(--main2Color) 50%, blue 50%) !important;
+}
+
+.containerCategory > ul {
+  grid-gap: 25px;
+  grid-template-columns: auto;
+  display: grid;
+}
+
+.containerCategory .card {
+  background: var(--background);
+  height: 100%;
+  justify-items: center;
+}
+
+.containerCategory .card a {
+  height: inherit;
+}
+
+.containerCategory .card img {
+  width: 100%;
+}
+
+.containerCategory .card h5 {
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.containerDetail .architecture ul {
+  margin-bottom: 25px;
+}
+
+.containerDetail .architecture li {
+  margin-top: 15px;
+  margin-left: 25px;
+  list-style: disc;
+}
+
+.containerDetail > section {
+  margin-top: 50px;
+}
+
+.containerDetail > section h3 {
+  margin-bottom: 25px;
+}
+
+.containerDetail .architectureMap {
+  max-width: 100%;
+  height: 300px;
+}
+
+.containerDetail .accommodation .accommodationMap {
+  width: 800px;
+  max-width: 100%;
+  height: 350px;
+  margin: 0 auto 50px;
+}
+
+.containerDetail .accommodation .price {
+  text-align: end;
+}
+
+.containerDetail .accommodation a {
+  margin-bottom: 25px;
+  display: inline-block;
+  -webkit-text-decoration: underline var(--mainColor) 2px !important;
+  text-decoration: underline var(--mainColor) 2px !important;
+}
+
+.containerDetail .gastronomy, .containerAbout ul {
+  margin-bottom: 50px;
+}
+
+.containerAbout li {
+  margin-bottom: 10px;
+  margin-left: 50px;
+  list-style: disc;
+}
+
+.containerAbout .divSvg {
+  max-width: 350px;
+  border: 15px groove #000;
+  margin: 25px auto;
+}
+
+.containerAbout svg {
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: block;
+}
+
+@media screen and (width <= 479px) {
+  .containerIndex > section:first-child > div > h2 {
+    font-size: 20px;
+  }
+
+  .containerIndex > section:first-child > div > h2 span {
+    font-size: 18px;
+  }
+
+  .containerAbout svg {
+    max-width: 85%;
+  }
+}
+
+@media screen and (width >= 480px) and (width <= 849px) {
+  .containerHeader {
+    height: 25vw;
+  }
+
+  footer {
+    grid-template-columns: auto auto;
+  }
+
+  footer div:not(:last-child, :first-child) {
+    padding-left: 50px;
+  }
+
+  footer div:first-child {
+    margin-left: 15%;
+  }
+
+  footer > div:last-child {
+    grid-column: span 2;
+  }
+
+  footer div:last-child ul {
+    grid-template-columns: auto auto auto;
+    display: grid;
+  }
+
+  .containerCategory > ul {
+    grid-template-columns: auto auto;
+  }
+
+  .containerCategory .card img {
+    width: 45vw;
+    height: 35vw;
+    max-width: 100%;
+  }
+}
+
+@media screen and (width >= 850px) {
+  header h1 {
+    font-size: 4rem;
+  }
+
+  .indexHeader .dropdown {
+    display: none;
+  }
+
+  .indexHeader nav .mainNav {
+    padding: 5px 60px 25px 40px;
+    display: grid;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  .indexHeader .mainNav ul {
+    grid-column-start: 2;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+    display: flex;
+  }
+
+  .containerHeader {
+    height: 150px;
+  }
+
+  footer {
+    grid-template-columns: auto auto auto auto;
+  }
+
+  footer div:last-child {
+    grid-column: span 4;
+  }
+
+  footer div:last-child ul {
+    grid-template-columns: auto auto auto;
+    display: grid;
+  }
+
+  .containerIndex > section:first-child {
+    width: 75vw;
+    max-width: 1000px;
+    margin: auto auto 70px;
+  }
+
+  .containerCategory > ul {
+    grid-gap: 25px;
+    grid-template-columns: auto auto auto auto;
+    display: grid;
+  }
+
+  .containerCategory .card a {
+    grid-template-columns: auto;
+    display: grid;
+  }
+
+  .containerCategory .card img {
+    height: 18vw;
+    max-height: 175px;
+    min-width: 100%;
+  }
+
+  .containerDetail .architecture {
+    grid-gap: 35px;
+    grid-template-columns: auto auto;
+    display: grid;
+  }
+
+  .containerDetail .architecture h2, .containerDetail .architecture p:nth-child(2) {
+    grid-column: span 2;
+    margin-bottom: 0;
+  }
+
+  .containerDetail .architecture figure, .containerDetail .architecture p, .containerDetail .architecture section {
+    align-self: center;
+    margin-bottom: 0;
+  }
+
+  .containerDetail .architecture p:last-child, .containerDetail .architecture p:nth-child(7), .containerDetail .architecture section:last-child {
+    grid-column: span 2;
+  }
+
+  .containerDetail .architectureMap {
+    width: 700px;
+    height: 400px;
+    margin: 50px auto;
+  }
+
+  .containerDetail .accommodation {
+    display: block;
+  }
+
+  .containerDetail .gastronomy section {
+    grid-column-gap: 25px;
+    grid-column: span 2;
+    grid-template-columns: auto auto;
+    display: grid;
+  }
+
+  .containerDetail .gastronomy section:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  .containerDetail .gastronomy section h3, .containerAbout h2 {
+    grid-column: span 2;
+  }
+
+  .containerAbout > div {
+    grid-gap: 50px;
+    grid-template-columns: auto 50%;
+    display: grid;
+  }
+
+  .containerAbout div > p {
+    align-self: center;
+  }
+
+  .containerAbout div > figure img {
+    max-height: 200px;
+  }
+
+  .containerAbout section {
+    grid-gap: 0px 50px;
+    grid-template-columns: auto auto;
+    display: grid;
+  }
+
+  .containerAbout section:nth-child(3) h3, .containerAbout section:nth-child(4) h3, .containerAbout section:nth-child(3) p:nth-child(2), .containerAbout section:nth-child(3) p:nth-child(5), .containerAbout section:nth-child(4) p:nth-child(2) {
+    grid-column: span 2;
+  }
+
+  .containerAbout section:nth-child(3) p:nth-child(4), .containerAbout section:nth-child(4) ul:nth-child(3) {
+    align-self: center;
+  }
+
+  .containerAbout section:nth-child(4) li {
+    margin-bottom: 25px;
+  }
+
+  .container {
+    margin: 50px;
+  }
+}
+
+@media screen and (width >= 1024px) {
+  .logoName h1, .logoName p, .header2 h1 a {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+  }
+
+  a, li, p {
+    font-size: 1.8rem;
+  }
+
+  .mainNav .logoName img {
+    margin-right: 25px;
+  }
+
+  .containerIndex {
+    margin: 50px;
+  }
+}
+
+@media screen and (width >= 1200px) {
+  header, footer, .containerIndex, .container {
+    max-width: 1200px;
+  }
+
+  .containerHeader {
+    height: 200px;
+  }
+
+  .indexHeader {
+    max-height: 700px;
+  }
+
+  .indexHeader nav .mainNav {
+    padding-top: 25px;
+  }
+
+  .indexHeader .mainNav ul {
+    grid-column-start: 3;
+  }
+
+  .indexHeader .logoName {
+    width: 175px;
+  }
+
+  .containerIndex {
+    margin: 100px 0;
+  }
+}
+
+a:hover:not(.logo, .card) {
+  -webkit-text-decoration: underline var(--main2Color) 2px !important;
+  text-decoration: underline var(--main2Color) 2px !important;
+  background-position: 0 !important;
+}
+
+a:hover:not(.logo, .menu a):before, a:focus:not(.logo, .menu a):before {
+  width: 100% !important;
+}
+
+a:active:not(.logo, .menu a), a:focus:not(.logo, .menu a) {
+  background-image: linear-gradient(to right, var(--mainColor), var(--mainColor) 50%, var(--mainColor) 50%) !important;
+  -webkit-text-decoration: underline var(--mainColor) 2px !important;
+  text-decoration: underline var(--mainColor) 2px !important;
+}
+
+a:active:not(.logo, .menu a):before {
+  width: 100% !important;
+  background: var(--mainColor) !important;
+}
+
+a.logo:hover h1, a.logo:hover h2, a.logo:active h1, a.logo:active h2, a.logo:focus h1, a.logo:focus h2, a.logo:active h1, a.logo:active h2 {
+  color: var(--main2Color);
+  font-weight: 700;
+}
+
+.menu li a:hover {
+  color: var(--background);
+  background: var(--main2Color);
+  text-decoration: none;
+}
+
+.menu li a:active, .menu li a:focus {
+  color: var(--background);
+  background: var(--mainColor);
+}
+
+.dropdown .iconMenu i:hover {
+  color: var(--main2Color);
+}
+
+.dropdown .iconMenu i:active, .iconMenu i:focus {
+  color: var(--mainColor);
+}
+
+footer a:hover i, footer a:active i, footer a:focus i {
+  color: var(--main2Color);
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px 4px var(--main2Color);
+  transform: scale(1.1);
+}
+
+.card:active, .card:focus {
+  cursor: pointer;
+  box-shadow: 0 0 10px 4px var(--mainColor);
+  animation: .2s ease-out zoom;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1.1);
+  }
+
+  50% {
+    transform: scale(.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.containerAbout svg .svg_1 {
+  animation: 1.2s ease-in-out 1s forwards bounce;
+  transform: translate(100%, -100%)scale(.5);
+}
+
+.containerAbout svg .svg_2 {
+  animation: .8s ease-in-out 2.4s forwards right-in;
+  transform: translate(100%);
+}
+
+.containerAbout svg .svg_3, .containerAbout svg .svg_4 {
+  animation: .8s ease-in-out 2.4s forwards left-in;
+  transform: translate(-200%);
+}
+
+@keyframes right-in {
+  0% {
+    transform: translate(100%);
+  }
+
+  50% {
+    transform: translate(-20%);
+  }
+
+  100% {
+    transform: translate(0%);
+  }
+}
+
+@keyframes left-in {
+  0% {
+    transform: translate(-200%);
+  }
+
+  50% {
+    transform: translate(20%);
+  }
+
+  100% {
+    transform: translate(0%);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1)translateY(-100%);
+  }
+
+  20% {
+    transform: scale(1)translateY(0%);
+  }
+
+  25% {
+    transform: scale(1, .6)translateY(120px);
+  }
+
+  30% {
+    transform: scale(1)translateY(0%);
+  }
+
+  45% {
+    transform: scale(.8, 1.2)translate(20px, -100px);
+  }
+
+  55% {
+    transform: scale(1)translateY(0%);
+  }
+
+  60% {
+    transform: scale(1, .7)translateY(75px);
+  }
+
+  70% {
+    transform: scale(1)translateY(0%);
+  }
+
+  80% {
+    transform: scale(1)translateY(-15%);
+  }
+
+  100% {
+    transform: scale(1)translateY(0%);
+  }
+}
+
+/*# sourceMappingURL=index.77a9bc14.css.map */
