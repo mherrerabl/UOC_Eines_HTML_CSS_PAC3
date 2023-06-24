@@ -78,7 +78,7 @@ export function chooseImage(obj, indexUrl, format){
 
 //Contingut swipers
 export function contentImageCard(obj) {
-    if(obj.id === "arch1"){
+    if(`arch${obj.id}` === "arch1"){
         return `<img src="${urlImages + obj.type.jpg.url[0]}"
         srcset="${chooseImage(obj, 2, "webp")} 320w,
                 ${chooseImage(obj, 1, "webp")} 480w"
