@@ -29,9 +29,10 @@ export function createMap(el, latitude, altitude, img, alt, title, zoom){
         zoom: zoom
     }
 
+    const imgWEBP = 'http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png?as=webp';
     const map = new L.map(el, mapOptions);
-    const layer = new L.TileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png?as=webp');
-L.export
+    const layer = new L.TileLayer(imgWEBP);
+
     map.addLayer(layer);
     
     let markerOptions = {
