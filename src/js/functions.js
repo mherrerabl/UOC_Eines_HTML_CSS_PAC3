@@ -30,7 +30,8 @@ export function createMap(el, latitude, altitude, img, alt, title, zoom){
     }
 
     const map = new L.map(el, mapOptions);
-    const layer = new L.TileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png');
+    const layer = new L.TileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png?as=webp');
+L.export
     map.addLayer(layer);
     
     let markerOptions = {
