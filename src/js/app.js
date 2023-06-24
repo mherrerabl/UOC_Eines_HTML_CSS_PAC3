@@ -106,8 +106,8 @@ $(function(){
     //Rep l'id del enllaç selecionat i l'emmagatzema en localStorage
     let categoryClicked = localStorage.getItem("category");
     categoryClicked === "" ? categoryClicked = "architecture" : categoryClicked = categoryClicked;
-    let detailClicked = "gastronomy";
-    categoryClicked = "gastronomy"
+    let detailClicked = "accommodations";
+    categoryClicked = "accommodations"
     setDetail(".card a");
     setDetail(".navBigScreen a");
 
