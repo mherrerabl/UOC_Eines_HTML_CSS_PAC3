@@ -86,7 +86,7 @@ export function contentImageCard(obj) {
                 srcset="${chooseImage(obj, 0, "webp")} 320w,
                         ${chooseImage(obj, 1, "webp")} 480w,
                         ${chooseImage(obj, 2, "webp")} 850w"
-                sizes="(max-width: 500px) 90vw,
+                sizes="(max-width: 600px) 90vw,
                         (max-width: 849px) 90vw,
                         (min-width: 850px) 33vw"
                 alt="${obj.alt}">`;
