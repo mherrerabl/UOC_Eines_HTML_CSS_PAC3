@@ -62,13 +62,13 @@ export function gridSwiper(wWidth) {
 //Retorna la url de la imatge segons si te art direction o no
 export function chooseImage(obj, indexUrl, format){
     if(format === "webp"){
-        if(obj.type.webp.art != undefined && indexUrl < 2){
+        if(obj.type.webp.art != undefined && indexUrl < 3){
             return urlImages + obj.type.webp.art[indexUrl];
         }else{
             return urlImages + obj.type.webp.url[indexUrl];
         }
     }else{
-        if(obj.type.jpg.art != undefined && indexUrl < 2){
+        if(obj.type.jpg.art != undefined && indexUrl < 3){
             return urlImages + obj.type.jpg.art[indexUrl];
         }else{
             return urlImages + obj.type.jpg.url[indexUrl];
@@ -78,6 +78,10 @@ export function chooseImage(obj, indexUrl, format){
 
 //Contingut swipers
 export function contentImageCard(obj) {
+    console.log("IMG1   ",chooseImage(obj, 0, "webp"));
+    console.log("IMG1   ",chooseImage(obj, 1, "webp"));
+    console.log("IMG1   ",chooseImage(obj, 2, "webp"));
+    console.log("__________________________________",);
     return `<img loading="lazy" src="${urlImages + obj.type.jpg.url[0]}"
                 srcset="${chooseImage(obj, 0, "webp")} 320w,
                         ${chooseImage(obj, 1, "webp")} 480w,
