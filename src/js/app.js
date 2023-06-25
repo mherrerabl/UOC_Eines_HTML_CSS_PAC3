@@ -1,6 +1,6 @@
 //IMPORT
 import data from '../json/details.json';
-import { $, urlImages, setCategory, setDetail, createMap, gridSwiper, chooseImage, contentImageCard, contentImagesArchitecture, changeColorLogo  } from "./functions";
+import { $, urlImages, createMap, gridSwiper, chooseImage, contentImageCard, contentImagesArchitecture, changeColorLogo  } from "./functions";
 
 
 if($(window).width() <= 850){
