@@ -149,21 +149,3 @@ export function changeColorLogo(event, color){
     const svgEl = documentEl.querySelector("svg");
     svgEl.style.color = color;
 }
-
-//Modifica la variable de la categoria clicada
-export function setCategory(el) {
-    $(el).on("click", function(event){
-        let nameCategory = event.target.id;
-        let category = nameCategory.substring(0, nameCategory.length-1);
-        categoryClicked = category;
-        localStorage.setItem("category", categoryClicked);
-    });
-}
-
-//Modifica la variable del detall clicat
-export function setDetail(el){
-    $(el).on("click", function(){
-        detailClicked  = $(this).attr('id');
-        localStorage.setItem("detail", detailClicked);
-    });
-}
