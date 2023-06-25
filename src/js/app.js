@@ -86,7 +86,7 @@ if ($(".containerCategory")[0]) {
 let categoryClicked = localStorage.getItem("category");
 categoryClicked === "" ? categoryClicked = "architecture" : categoryClicked = categoryClicked;
 let detailClicked = "";
-
+categoryClicked="gastronomy"
 setDetail(".card a");
 setDetail(".navBigScreen a");
 
