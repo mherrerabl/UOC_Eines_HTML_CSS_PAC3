@@ -125,8 +125,11 @@ $(function(){
 
     detailClicked = localStorage.getItem("detail");
 
+    console.log("det", detailClicked);
+    console.log("cat", categoryClicked);
     //Verifica que sigui la pàgina Detail i crea el contingut de la pàgina
     if ($(".containerDetail")[0]) {
+        console.log("in");
         const infoCategory = data[categoryClicked];
         let breadcrumbCategory = "";
         if(categoryClicked === "architecture"){
