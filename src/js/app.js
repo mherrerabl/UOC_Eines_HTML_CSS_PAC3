@@ -1,5 +1,6 @@
 //IMPORT
 import data from '../json/details.json';
+import * as $  from "jquery";
 
 /**********GENEREAL VARIABLES***********/
 const urlImages = "https://raw.githubusercontent.com/mherrerabl/UOC_Eines_HTML_CSS_PAC3/main/";
