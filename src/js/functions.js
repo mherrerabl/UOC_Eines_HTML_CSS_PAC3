@@ -1,28 +1,9 @@
 import * as $  from "jquery";
-import { log } from "util";
 
 /**********GENEREAL VARIABLES***********/
 export const urlImages = "https://raw.githubusercontent.com/mherrerabl/UOC_Eines_HTML_CSS_PAC3/main/";
 export {$}
 /**********GENEREAL FUNCTIONS***********/
-//Modifica la variable de la categoria clicada
-export function setCategory(el) {
-    $(el).on("click", function(event){
-        let nameCategory = event.target.id;
-        let category = nameCategory.substring(0, nameCategory.length-1);
-        categoryClicked = category;
-        localStorage.setItem("category", categoryClicked);
-        alert(categoryClicked);
-    });
-}
-
-//Modifica la variable del detall clicat
-export function setDetail(el){
-    $(el).on("click", function(){
-        detailClicked  = $(this).attr('id');
-        localStorage.setItem("detail", detailClicked);
-    });
-}
 
 //Crea el mapa segons la latitud i l'altitud
 export function createMap(el, latitude, altitude, img, alt, title, zoom){
