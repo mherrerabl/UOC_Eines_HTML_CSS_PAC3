@@ -46,11 +46,6 @@ export function createMap(el, latitude, altitude, img, alt, title, zoom){
         marker.bindPopup('<img style="width: 200px" src="'+img+'" alt="'+alt+'"><p style="text-align: center">'+title+'</p>').openPopup();
     }
     marker.addTo(map);
-
-    $("#mapaIndex img").attr("loading", "lazy");
-    $(".accommodationMap img").attr("loading", "lazy");
-    $(".architectureMap img").attr("loading", "lazy");
-
 }
 
 //Canvia el número de columnes de SwiperJS

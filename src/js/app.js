@@ -86,7 +86,7 @@ if ($(".containerCategory")[0]) {
 let categoryClicked = localStorage.getItem("category");
 categoryClicked === "" ? categoryClicked = "architecture" : categoryClicked = categoryClicked;
 let detailClicked = "";
-categoryClicked="accommodations"
+
 setDetail(".card a");
 setDetail(".navBigScreen a");
 
@@ -273,9 +273,9 @@ $(function(){
     if (n < 1) {slideIndex = x.length} ;
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
-        img[0].style.display = "none";
+        if(img != undefined){img[0].style.display = "none";}
     }
-    img[slideIndex-1].style.display = "inline-block";
+    if(img != undefined){img[slideIndex-1].style.display = "inline-block";}
     x[slideIndex-1].style.display = "inline-block";
     x[slideIndex-1].style.width = "100%";
     x[slideIndex-1].style.height = "auto";
