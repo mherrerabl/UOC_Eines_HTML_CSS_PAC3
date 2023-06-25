@@ -1,4 +1,5 @@
 import * as $  from "jquery";
+import { log } from "util";
 
 /**********GENEREAL VARIABLES***********/
 export const urlImages = "https://raw.githubusercontent.com/mherrerabl/UOC_Eines_HTML_CSS_PAC3/main/";
@@ -11,6 +12,7 @@ export function setCategory(el) {
         let category = nameCategory.substring(0, nameCategory.length-1);
         categoryClicked = category;
         localStorage.setItem("category", categoryClicked);
+        alert(categoryClicked);
     });
 }
 

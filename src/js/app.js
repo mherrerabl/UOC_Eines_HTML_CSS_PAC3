@@ -75,7 +75,10 @@ $(function(){
         n > 4 ? n = 1 : n;
     }, 5000);
 
-
+    /*****NAV*****/
+    //Modifica la variable clickedCategory
+    setCategory(".indexHeader a");
+    setCategory("footer a");
 
     /*****INDEX*****/
     //Afegeix el mapa a la pàgina principal i el swiper dels punts d'interès
@@ -273,11 +276,6 @@ $(function(){
         detailClicked  = $(this).attr('id');
         localStorage.setItem("detail", detailClicked);
     });
-
-    /*****NAV*****/
-    //Modifica la variable clickedCategory
-    setCategory(".indexHeader a");
-    setCategory("footer a");
 
 
     /*****LOGO HOVER*****/ 

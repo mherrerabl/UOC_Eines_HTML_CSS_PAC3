@@ -651,7 +651,11 @@ containerGastronomy{
     }
     
 }
-
+@media screen and (max-width: 850px){
+    .containerHeader{
+        height: 250px;
+    }
+}
 @media screen and (min-width: 850px){
    /*****HEADER*****/
     header h1{
