@@ -3,25 +3,6 @@ import * as $  from "jquery";
 import data from '../json/details.json';
 import { urlImages, createMap, gridSwiper, chooseImage, contentImageCard, contentImagesArchitecture, changeColorLogo  } from "./functions";
 
-//Modifica la variable de la categoria clicada
-function setCategory(el) {
-    $(el).on("click", function(event){
-        let nameCategory = event.target.id;
-        let category = nameCategory.substring(0, nameCategory.length-1);
-        categoryClicked = category;
-        localStorage.setItem("category", categoryClicked);
-        alert(categoryClicked);
-    });
-}
-
-//Modifica la variable del detall clicat
-function setDetail(el){
-    $(el).on("click", function(){
-        detailClicked  = $(this).attr('id');
-        localStorage.setItem("detail", detailClicked);
-    });
-}
-
 
 if($(window).width() <= 850){
     $(function(){
@@ -65,6 +46,24 @@ if($(window).width() <= 850){
 
 
 $(function(){
+    //Modifica la variable de la categoria clicada
+    function setCategory(el) {
+        $(el).on("click", function(event){
+            let nameCategory = event.target.id;
+            let category = nameCategory.substring(0, nameCategory.length-1);
+            categoryClicked = category;
+            localStorage.setItem("category", categoryClicked);
+            alert(categoryClicked);
+        });
+    }
+
+    //Modifica la variable del detall clicat
+    function setDetail(el){
+        $(el).on("click", function(){
+            detailClicked  = $(this).attr('id');
+            localStorage.setItem("detail", detailClicked);
+        });
+    }
  /************************************PAGES CONTENT************************************/
     //Slider de les imatges de la capçalera
     let slideIndex = 1;
