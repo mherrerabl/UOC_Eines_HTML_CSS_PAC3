@@ -136,11 +136,11 @@ $(function(){
             const title = `<h2>${infoCategory.title}</h2>`;
             const introduction = `<p>${infoCategory.introduction}</p>`;
             const objHotels = infoCategory.information;
-            $(".containerDetail article").addClass("accommodation");
-            $(".containerDetail article").append(title);
-            $(".containerDetail article").append(introduction);
+            $(".containerAccommodations article").addClass("accommodation");
+            $(".containerAccommodations article").append(title);
+            $(".containerAccommodations article").append(introduction);
             objHotels.forEach(hotel => {
-                $(".containerDetail article").append(`<section>
+                $(".containerAccommodations article").append(`<section>
                                                         <h3>${hotel.name}</h3>
                                                         <p>${hotel.description}</p>
                                                         <p class="price">El preu per nit és de ${hotel.price}€.</p>
