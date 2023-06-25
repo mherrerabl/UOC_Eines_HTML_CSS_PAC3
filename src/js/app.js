@@ -119,13 +119,12 @@ $(function(){
     let categoryClicked = ""
     categoryClicked = localStorage.getItem("category");
     categoryClicked === "" ? categoryClicked = "architecture" : categoryClicked = categoryClicked;
-    let detailClicked = "";
-
+    let detailClicked = "arch1";
+    categoryClicked = "architecture"
     setDetail(".card a");
     setDetail(".navBigScreen a");
 
     detailClicked = localStorage.getItem("detail");
-    detailClicked === "" ? detailClicked = "arch1" : detailClicked = detailClicked;
 
     //Verifica que sigui la pàgina Detail i crea el contingut de la pàgina
     if ($(".containerDetail")[0]) {
