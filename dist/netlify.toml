@@ -1,5 +1,4 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Access-Control-Allow-Origin = "*"
     Cache-control = "31536000"
