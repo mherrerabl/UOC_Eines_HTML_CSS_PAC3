@@ -124,7 +124,7 @@ $(function(){
     setDetail(".card a");
     setDetail(".navBigScreen a");
 
-    detailClicked = localStorage.getItem("detail");
+    //detailClicked = localStorage.getItem("detail");
 
     //Verifica que sigui la pàgina Detail i crea el contingut de la pàgina
     if ($(".containerDetail")[0]) {
