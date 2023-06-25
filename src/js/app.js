@@ -1,107 +1,169 @@
 //IMPORT
+import * as $  from "jquery";
 import data from '../json/details.json';
-import { $, urlImages, setCategory, setDetail, createMap, gridSwiper, chooseImage, contentImageCard, contentImagesArchitecture, changeColorLogo  } from "./functions";
 
-
-if($(window).width() <= 850){
-    $(function(){
-        /*****HEADER*****/
-        //Menu
-        //Inserta el menú desplegable, el mostra. Quan es tanca, s'esborra
-        const contentMenu = `<ul class="menuUl">
-                                <li><a href="./about.html">Sobre Nara</a></li>
-                                <li><a id="architecture3" href="category.html">Punts d'interès</a></li>
-                                <li><a id="gastronomy3" href="detail.html">Gastronomia</a></li>
-                                <li><a id="accommodations3" href="detail.html">Allotjaments turístics</a></li>
-                            </ul>`;
-
-        $(".iconMenu").on("click", function(){
-            if($(".menu").find(".menuUl").length <= 0){
-                $(".menu").append(contentMenu).hide();
-                $(".menu").slideDown("slow");
-            }else{
-                $(".menu").slideUp("slow");
-                setTimeout(() => {
-                    $(".menuUl").remove();
-                }, 2000);   
-            } 
-
-            //Modifica la variable clickedCategory
-            setCategory(".menu a");
-        });
-
-        //Si es prem fora del menú, es tanca
-        $(document).on('click',function(e){
-            if(!(($(e.target).closest(".menuUl").length > 0 ) || ($(e.target).closest(".iconMenu").length > 0))){
-                $(".menu").slideUp("slow");
-                setTimeout(() => {
-                    $(".menuUl").remove();
-                }, 2000);   
-            }
-        });
-
-    });
-}
-
-/*****INDEX*****/
-//Afegeix el mapa a la pàgina principal i el swiper dels punts d'interès
-if($(".containerIndex")[0]){
-    const arrArch = data["architecture"].information;
-    
-    createMap('mapIndex', 34.413836863583136, 135.86368042265963, `${urlImages + arrArch[1].img[0].type.jpg.url[0]}`, `${arrArch[1].img[0].alt}`, "Prefectura de Nara", 10);
-    
-    arrArch.forEach( obj => {
-        $(".containerIndex .swiperIndex").append(`<swiper-slide>
-                                                        <div class="card cardSwiper">
-                                                            <a id="arch${obj.id}" href="./detail.html" >
-                                                            ${contentImageCard(obj.img[0])}
-                                                            <h5>${obj.name}</h5>
-                                                            </a>
-                                                        </div>
-                                                    </swiper-slide>`);
-        });
-}
-
-/*****CATEGORY*****/
-//Crea el contingut de la pàgina
-if ($(".containerCategory")[0]) {
-    //Afegeix el breadcrumb
-    const breadcrumb = `<div class="breadcrumbs"><p><a href="index.html">Inici</a><span class="separator">></span><span class="currentPage">Punts d'interès</span></p></div>`;
-    $(".container").prepend(breadcrumb);
-
-    const arrArch = data["architecture"].information;
-    arrArch.forEach( obj => {
-        $(".containerCategory ul").append(`<li class="card">
-                                            <a href="./detail.html" id="arch${obj.id}">
-                                                ${contentImageCard(obj.img[0])}
-                                                <h5>${obj.name}</h5>
-                                            </a>
-                                            </li>`);
-    });
-}
 
 
 $(function(){
+    /**********GENEREAL VARIABLES***********/
+    const urlImages = "https://raw.githubusercontent.com/mherrerabl/UOC_Eines_HTML_CSS_PAC2/main/";
+
+   /**********GENEREAL FUNCTIONS***********/
+    //Modifica la variable de la categoria clicada
+    function setCategory(el) {
+        $(el).on("click", function(event){
+            let nameCategory = event.target.id;
+            let category = nameCategory.substring(0, nameCategory.length-1);
+            categoryClicked = category;
+            localStorage.setItem("category", categoryClicked);
+        });
+    }
+
+    //Modifica la variable del detall clicat
+    function setDetail(el){
+        $(el).on("click", function(){
+            detailClicked  = $(this).attr('id');
+            localStorage.setItem("detail", detailClicked);
+        });
+    }
+
+    //Crea el mapa segons la latitud i l'altitud
+    function createMap(el, latitude, altitude, img, alt, title, zoom){
+        const mapOptions = {
+            center: [latitude, altitude],
+            zoom: zoom
+        }
+    
+        const map = new L.map(el, mapOptions);
+        const layer = new L.TileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png');
+        map.addLayer(layer);
+        
+        let markerOptions = {
+            title: "Prefectrua de Nara",
+            clickable: true
+        }
+        const marker = new L.Marker([latitude, altitude], markerOptions);
+        if(img === ""){
+            marker.bindPopup('<p style="text-align: center">'+title+'</p>').openPopup();
+        }else{
+            marker.bindPopup('<img style="width: 200px" src="'+img+'" alt="'+alt+'"><p style="text-align: center">'+title+'</p>').openPopup();
+        }
+        marker.addTo(map);
+    }
+
+    //Canvia el número de columnes de SwiperJS
+    function gridSwiper(wWidth) {
+        if (wWidth < 479){
+            $('swiper-container').attr('slides-per-view', '1');
+        }else if(wWidth < 800){
+            $('swiper-container').attr('slides-per-view', '2');
+        }else if (wWidth > 801){
+            $('swiper-container').attr('slides-per-view', '4');
+        }
+    }
+
+    //Retorna la url de la imatge segons si te art direction o no
+    function chooseImage(obj, indexUrl){
+        if(obj.type.jpg.art != undefined && indexUrl < 2){
+            return urlImages + obj.type.jpg.art[indexUrl];
+        }else{
+            return urlImages + obj.type.jpg.url[indexUrl];
+        }
+    }
+
+    //Contingut swipers
+    function contentImageCard(obj) {
+        return `<img src="${urlImages + obj.type.jpg.dpi[0]}"
+                    srcset="${urlImages + obj.type.jpg.dpi[0]}?as=webp 1x,
+                            ${urlImages + obj.type.jpg.dpi[1]}?as=webp 2x,
+                            ${urlImages + obj.type.jpg.dpi[2]}?as=webp 3x"
+
+                    alt="${obj.alt}">`;
+    }
+    //Contingut imatges dels punts d'interès (pàgina Detail)
+    function contentImagesArchitecture(obj) {
+        return `<picture>
+                    <source media="(min-width: 850px)" 
+                            srcset="${chooseImage(obj, 2)}?as=webp" 
+                            type="image/webp">
+                    <source media="(min-width: 480px)" 
+                            srcset="${chooseImage(obj, 1)}?as=webp" 
+                            type="image/webp">
+                    <source media="(max-width: 479px)" 
+                            srcset="${chooseImage(obj, 0)}?as=webp" 
+                            type="image/webp">
+                    
+                    <source media="(min-width: 850px)" 
+                            srcset="${chooseImage(obj, 2)}" 
+                            type="image/jpg">
+                    <source media="(min-width: 480px)" 
+                            srcset="${chooseImage(obj, 1)}" 
+                            type="image/jpg">
+                    <source media="(max-width: 479px)" 
+                            srcset="${chooseImage(obj, 0)}" 
+                            type="image/jpg">
+
+                    <img src="${chooseImage(obj, 0)}" alt="${obj.alt}">
+                </picture>`;
+    }
+
+    //Canvia el color del logo
+    function changeColorLogo(event, color){
+        const objectEl = $(event.currentTarget).children("object")[0];
+        const documentEl = objectEl.contentDocument;
+        const svgEl = documentEl.querySelector("svg");
+        svgEl.style.color = color;
+    }
+
+
  /************************************PAGES CONTENT************************************/
+    /*****HEADER*****/
+    //Menu
+    //Inserta el menú desplegable, el mostra. Quan es tanca, s'esborra
+    const contentMenu = `<ul class="menuUl">
+                            <li><a href="./about.html">Sobre Nara</a></li>
+                            <li><a id="architecture3" href="category.html">Punts d'interès</a></li>
+                            <li><a id="gastronomy3" href="detail.html">Gastronomia</a></li>
+                            <li><a id="accommodations3" href="detail.html">Allotjaments turístics</a></li>
+                        </ul>`;
+
+    $(".iconMenu").on("click", function(){
+        if($(".menu").find(".menuUl").length <= 0){
+            $(".menu").append(contentMenu).hide();
+            $(".menu").slideDown("slow");
+        }else{
+            $(".menu").slideUp("slow");
+            setTimeout(() => {
+                $(".menuUl").remove();
+            }, 2000);   
+        } 
+
+        //Modifica la variable clickedCategory
+        setCategory(".menu a");
+    });
+
+    //Si es prem fora del menú, es tanca
+    $(document).on('click',function(e){
+        if(!(($(e.target).closest(".menuUl").length > 0 ) || ($(e.target).closest(".iconMenu").length > 0))){
+            $(".menu").slideUp("slow");
+            setTimeout(() => {
+                $(".menuUl").remove();
+            }, 2000);   
+    }
+    });
+
     //Slider de les imatges de la capçalera
     let slideIndex = 1;
 
     function slideHeader(n) {
     let i;
     let x = document.getElementsByClassName("mySlides");
-    let img = document.getElementsByClassName("slimSlideImg");
-
     if (n > x.length) {slideIndex = 1}
     if (n < 1) {slideIndex = x.length} ;
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
-        if(img.length > 0){img[0].style.display = "none";}
     }
-
-    if(img.length > 0){img[slideIndex-1].style.display = "inline-block";}
     x[slideIndex-1].style.display = "inline-block";
-    x[slideIndex-1].style.width = "100%";
-    x[slideIndex-1].style.height = "auto";
     }
 
     let n = 1;
@@ -111,13 +173,52 @@ $(function(){
         n++;
         n > 4 ? n = 1 : n;
     }, 5000);
- 
+
+
+
+    /*****INDEX*****/
+    //Afegeix el mapa a la pàgina principal i el swiper dels punts d'interès
+    if($(".containerIndex")[0]){
+        const arrArch = data["architecture"].information;
+      
+        createMap('mapIndex', 34.413836863583136, 135.86368042265963, `${urlImages + arrArch[1].img[0].type.jpg.url[0]}`, `${arrArch[1].img[0].alt}`, "Prefectura de Nara", 10);
+        
+        arrArch.forEach( obj => {
+            $(".containerIndex .swiperIndex").append(`<swiper-slide>
+                                                            <div class="card cardSwiper">
+                                                                <a id="arch${obj.id}" href="./detail.html" >
+                                                                ${contentImageCard(obj.img[0])}
+                                                                <h5>${obj.name}</h5>
+                                                                </a>
+                                                            </div>
+                                                        </swiper-slide>`);
+            });
+    }
+
+    /*****CATEGORY*****/
+    //Crea el contingut de la pàgina
+    if ($(".containerCategory")[0]) {
+        //Afegeix el breadcrumb
+        const breadcrumb = `<div class="breadcrumbs"><p><a href="index.html">Inici</a><span class="separator">></span><span class="currentPage">Punts d'interès</span></p></div>`;
+        $(".container").prepend(breadcrumb);
+
+        const arrArch = data["architecture"].information;
+        arrArch.forEach( obj => {
+            $(".containerCategory ul").append(`<li class="card">
+                                                <a href="./detail.html" id="arch${obj.id}">
+                                                    ${contentImageCard(obj.img[0])}
+                                                    <h5>${obj.name}</h5>
+                                                </a>
+                                                </li>`);
+        });
+    }
+
     /*****DETAIL*****/
     //Rep l'id del enllaç selecionat i l'emmagatzema en localStorage
     let categoryClicked = localStorage.getItem("category");
     categoryClicked === "" ? categoryClicked = "architecture" : categoryClicked = categoryClicked;
     let detailClicked = "";
-    console.log(categoryClicked);
+
     setDetail(".card a");
     setDetail(".navBigScreen a");
 
@@ -126,7 +227,6 @@ $(function(){
     //Verifica que sigui la pàgina Detail i crea el contingut de la pàgina
     if ($(".containerDetail")[0]) {
         const infoCategory = data[categoryClicked];
-
         let breadcrumbCategory = "";
         if(categoryClicked === "architecture"){
             breadcrumbCategory = "Punts d'interès";
@@ -144,11 +244,11 @@ $(function(){
             const title = `<h2>${infoCategory.title}</h2>`;
             const introduction = `<p>${infoCategory.introduction}</p>`;
             const objHotels = infoCategory.information;
-            $(".containerAccommodations article").addClass("accommodation");
-            $(".containerAccommodations article").append(title);
-            $(".containerAccommodations article").append(introduction);
+            $(".containerDetail article").addClass("accommodation");
+            $(".containerDetail article").append(title);
+            $(".containerDetail article").append(introduction);
             objHotels.forEach(hotel => {
-                $(".containerAccommodations article").append(`<section>
+                $(".containerDetail article").append(`<section>
                                                         <h3>${hotel.name}</h3>
                                                         <p>${hotel.description}</p>
                                                         <p class="price">El preu per nit és de ${hotel.price}€.</p>
@@ -164,45 +264,24 @@ $(function(){
         if(categoryClicked === "gastronomy"){
             const title = `<h2>${infoCategory.title}</h2>`;
             const objFoods = infoCategory.information;
-            $(".containerGastronomy article").addClass("gastronomy");
-            $(".containerGastronomy article").append(title);
+            $(".containerDetail article").addClass("gastronomy");
+            $(".containerDetail article").append(title);
 
-            let firstImgGastronomy = 0;
             objFoods.forEach( food => {
-                if(firstImgGastronomy === 0){
-                    firstImgGastronomy++;
-                    $(".containerGastronomy article").append(`<section>
+                $(".containerDetail article").append(`<section>
                                                         <h3>${food.name}</h3>
                                                         <p>${food.description}</p>
                                                         <figure>
-                                                        <img src="${chooseImage(food.img, 0, "jpg")}"
-                                                            srcset="${chooseImage(food.img, 0, "webp")} 480w,
-                                                                    ${chooseImage(food.img, 1, "webp")} 850w"
-                                                            sizes="(max-width: 849px) 80vw,
-                                                                    (min-width: 850px) 70vw"
-                                                            alt="${food.alt}"
-                                                            width="300"
-                                                            height="300">
+                                                        <img src="${chooseImage(food.img, 1)}"
+                                                            srcset="${chooseImage(food.img, 0)}?as=webp 480w,
+                                                                    ${chooseImage(food.img, 1)}?as=webp 850w"
+                                                            sizes="(max-width: 849px) 100vw,
+                                                                    (min-width: 850px) 50vw"
+                                                            alt="${food.img.alt}">
                                                             <figcaption><a class="figcaptionLink" href="${food.attribution.url}">${food.attribution.author}</a></figcaption>
                                                         </figure>
+
                                                     </section>`);
-                }else{
-                    $(".containerGastronomy article").append(`<section>
-                                                        <h3>${food.name}</h3>
-                                                        <p>${food.description}</p>
-                                                        <figure>
-                                                        <img loading="lazy" src="${chooseImage(food.img, 0, "jpg")}"
-                                                            srcset="${chooseImage(food.img, 0, "webp")} 480w,
-                                                                    ${chooseImage(food.img, 1, "webp")} 850w"
-                                                            sizes="(max-width: 849px) 80vw,
-                                                                    (min-width: 850px) 70vw"
-                                                            alt="${food.alt}"
-                                                            width="300"
-                                                            height="300">
-                                                            <figcaption><a class="figcaptionLink" href="${food.attribution.url}">${food.attribution.author}</a></figcaption>
-                                                        </figure>
-                                                    </section>`);
-                }
             });
                 
         }
@@ -262,7 +341,7 @@ $(function(){
                                             <div class="architectureMap" id="mapDetail${objArch[0].id}"></div>
                                         </section>`
             );
-            
+         
             createMap(`mapDetail${objArch[0].id}`, objArch[0].latitude, objArch[0].altitude, urlImages+(objArch[0].img[0].type.jpg.url[0]), objArch[0].img[0].alt, objArch[0].name, 15);
             
             //Crea un swiper amb la resta de punts d'interès
