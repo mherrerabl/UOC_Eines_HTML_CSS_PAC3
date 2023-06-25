@@ -232,6 +232,11 @@ object{
     text-decoration: none;
 }
 
+.iconMenu {
+    width: 25px;
+    height: 25px
+}
+
 /**Slider HeaderIndex**/
 .indexHeader .slideHeader {
     position: relative;
