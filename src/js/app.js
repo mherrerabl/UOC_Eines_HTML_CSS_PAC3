@@ -1,7 +1,7 @@
 //IMPORT
 import * as $  from "jquery";
 import data from '../json/details.json';
-import { urlImages, changeColorLogo, contentImagesArchitecture, contentImageCard, chooseImage, gridSwiper, createMap } from "./functions";
+import { urlImages, contentImagesArchitecture, contentImageCard, chooseImage, gridSwiper, createMap } from "./functions";
 
 
 $(function(){

@@ -142,10 +142,4 @@ export function contentImagesArchitecture(obj) {
             </picture>`;
 }
 
-//Canvia el color del logo
-export function changeColorLogo(event, color){
-    const objectEl = $(event.currentTarget).children("object")[0];
-    const documentEl = objectEl.contentDocument;
-    const svgEl = documentEl.querySelector("svg");
-    svgEl.style.color = color;
-}
+
