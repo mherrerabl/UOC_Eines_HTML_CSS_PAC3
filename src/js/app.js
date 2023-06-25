@@ -116,8 +116,7 @@ $(function(){
 
     /*****DETAIL*****/
     //Rep l'id del enllaç selecionat i l'emmagatzema en localStorage
-    let categoryClicked = ""
-    categoryClicked = localStorage.getItem("category");
+    let categoryClicked = localStorage.getItem("category");
     categoryClicked === "" ? categoryClicked = "architecture" : categoryClicked = categoryClicked;
     let detailClicked = "";
 
