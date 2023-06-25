@@ -255,6 +255,7 @@ object{
 .containerHeader{
     height: fit-content;
     overflow-y: hidden;
+    height: 200px;
 }
 
 .containerHeader .swiper img{
@@ -651,11 +652,7 @@ containerGastronomy{
     }
     
 }
-@media screen and (max-width: 850px){
-    .containerHeader{
-        height: 250px;
-    }
-}
+
 @media screen and (min-width: 850px){
    /*****HEADER*****/
     header h1{
@@ -685,9 +682,7 @@ containerGastronomy{
     }
 
     /**HEADER2**/
-    .containerHeader{
-        height: 150px;
-    }
+ 
 
     /*****FOOTER*****/
     footer{ 
@@ -863,11 +858,6 @@ containerGastronomy{
 
     .mainNav .logoName img{
         margin-right: 25px;
-    }
-
-    /*****HEADER*****/
-    .containerHeader{
-        height: 200px;
     }
 
     /*****INDEX*****/
