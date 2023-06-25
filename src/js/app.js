@@ -269,7 +269,7 @@ $(function(){
     function slideHeader(n) {
     let i;
     let x = document.getElementsByClassName("mySlides");
-    let img = x.querySelector("img");
+    let img = document.getElementsByClassName("slimSlideImg");
     if (n > x.length) {slideIndex = 1}
     if (n < 1) {slideIndex = x.length} ;
     for (i = 0; i < x.length; i++) {
