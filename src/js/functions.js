@@ -2,7 +2,7 @@ import { $ }  from "jquery";
 
 /**********GENEREAL VARIABLES***********/
 export const urlImages = "https://raw.githubusercontent.com/mherrerabl/UOC_Eines_HTML_CSS_PAC3/main/";
-export { $ }
+
 /**********GENEREAL FUNCTIONS***********/
 //Modifica la variable de la categoria clicada
 export function setCategory(el) {
