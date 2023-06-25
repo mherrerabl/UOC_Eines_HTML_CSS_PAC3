@@ -1,4 +1,5 @@
 //IMPORT
+import { log } from 'util';
 import data from '../json/details.json';
 import { $, urlImages, setCategory, setDetail, createMap, gridSwiper, chooseImage, contentImageCard, contentImagesArchitecture, changeColorLogo  } from "./functions";
 
@@ -269,6 +270,7 @@ $(function(){
     let i;
     let x = document.getElementsByClassName("mySlides");
     let img = document.getElementsByClassName("slimSlideImg");
+    console.log(img);
     if (n > x.length) {slideIndex = 1}
     if (n < 1) {slideIndex = x.length} ;
     for (i = 0; i < x.length; i++) {
