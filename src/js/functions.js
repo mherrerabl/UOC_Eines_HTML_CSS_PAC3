@@ -77,8 +77,8 @@ export function chooseImage(obj, indexUrl, format){
 }
 
 //Contingut swipers
-let firstImg = 0;
 export function contentImageCard(obj) {
+    let firstImg = 0;
     if(firstImg === 0){
         firstImg++;
         return `<img src="${urlImages + obj.type.jpg.url[0]}"
@@ -102,8 +102,8 @@ export function contentImageCard(obj) {
                 height="300">`;
 }
 //Contingut imatges dels punts d'interès (pàgina Detail)
-let firstImgArch = 0;
 export function contentImagesArchitecture(obj) {
+    let firstImgArch = 0;
     if(firstImgArch === 0){
         firstImgArch++;
         return `<picture>
