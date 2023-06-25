@@ -1,5 +1,4 @@
 //IMPORT
-import { log } from 'util';
 import data from '../json/details.json';
 import { $, urlImages, setCategory, setDetail, createMap, gridSwiper, chooseImage, contentImageCard, contentImagesArchitecture, changeColorLogo  } from "./functions";
 
@@ -274,9 +273,9 @@ $(function(){
     if (n < 1) {slideIndex = x.length} ;
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
-        img[i].style.display = "none";
+        img[0].style.display = "none";
     }
-    img[slideIndex-1].style.display = "inline-block";
+    img[0].style.display = "inline-block";
     x[slideIndex-1].style.display = "inline-block";
     x[slideIndex-1].style.width = "100%";
     x[slideIndex-1].style.height = "auto";
