@@ -275,7 +275,7 @@ $(function(){
         x[i].style.display = "none";
         img[0].style.display = "none";
     }
-    img[0].style.display = "inline-block";
+    img[slideIndex-1].style.display = "inline-block";
     x[slideIndex-1].style.display = "inline-block";
     x[slideIndex-1].style.width = "100%";
     x[slideIndex-1].style.height = "auto";
