@@ -29,12 +29,12 @@ export function createMap(el, latitude, altitude, img, alt, title, zoom){
         zoom: zoom
     }
 
-    const imgWEBP = 'http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png';
+    const imgPNG = 'http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png';
     const map = new L.map(el, mapOptions);
-    const layer = new L.TileLayer(imgWEBP);
-
-    map.addLayer(layer);
+    const layer = new L.TileLayer(imgPNG);
     
+    map.addLayer(layer);
+
     let markerOptions = {
         title: "Prefectrua de Nara",
         clickable: true
@@ -46,6 +46,9 @@ export function createMap(el, latitude, altitude, img, alt, title, zoom){
         marker.bindPopup('<img style="width: 200px" src="'+img+'" alt="'+alt+'"><p style="text-align: center">'+title+'</p>').openPopup();
     }
     marker.addTo(map);
+    $("#mapaIndex img").attr("loading", "lazy");
+    $(".accommodationMap img").attr("loading", "lazy");
+    $(".architectureMap img").attr("loading", "lazy");
 }
 
 //Canvia el número de columnes de SwiperJS
