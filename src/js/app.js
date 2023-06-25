@@ -269,11 +269,14 @@ $(function(){
     function slideHeader(n) {
     let i;
     let x = document.getElementsByClassName("mySlides");
+    let img = document.querySelector("mySlides img");
     if (n > x.length) {slideIndex = 1}
     if (n < 1) {slideIndex = x.length} ;
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
+        img[i].style.display = "none";
     }
+    img[slideIndex-1].style.display = "inline-block";
     x[slideIndex-1].style.display = "inline-block";
     x[slideIndex-1].style.width = "100%";
     x[slideIndex-1].style.height = "auto";
