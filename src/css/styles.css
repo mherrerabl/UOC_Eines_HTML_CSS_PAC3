@@ -269,7 +269,6 @@ object{
 
 .slideHeaderSlim img{
     min-width: inherit;
-    height: 40vw;
 }
 
 
@@ -862,6 +861,11 @@ containerGastronomy{
         margin-right: 25px;
     }
 
+    /*****HEADER*****/
+    .containerHeader{
+        height: 200px;
+    }
+
     /*****INDEX*****/
     .containerIndex{
         margin: 50px;
@@ -873,11 +877,6 @@ containerGastronomy{
     /*****COMMON CONTAINER*****/
     header, footer, .containerIndex, .container{
         max-width: 1200px;
-    }
-
-    /*****HEADER*****/
-    .containerHeader{
-        height: 200px;
     }
 
     .indexHeader{

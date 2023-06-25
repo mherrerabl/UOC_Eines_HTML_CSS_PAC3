@@ -275,9 +275,9 @@ $(function(){
     if (n < 1) {slideIndex = x.length} ;
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
-        if(img != undefined){img[0].style.display = "none";}
+        if(img.length < 0){img[0].style.display = "none";}
     }
-    if(img != undefined){img[slideIndex-1].style.display = "inline-block";}
+    if(img.length < 0){img[slideIndex-1].style.display = "inline-block";}
     x[slideIndex-1].style.display = "inline-block";
     x[slideIndex-1].style.width = "100%";
     x[slideIndex-1].style.height = "auto";
