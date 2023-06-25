@@ -81,16 +81,7 @@ if ($(".containerCategory")[0]) {
 }
 
 
-/*****DETAIL*****/
-//Rep l'id del enllaç selecionat i l'emmagatzema en localStorage
-let categoryClicked = localStorage.getItem("category");
-categoryClicked === "" ? categoryClicked = "architecture" : categoryClicked = categoryClicked;
-let detailClicked = "";
-console.log(categoryClicked);
-setDetail(".card a");
-setDetail(".navBigScreen a");
 
-detailClicked = localStorage.getItem("detail");
     
 //Verifica que sigui la pàgina Detail i crea el contingut de la pàgina
 if ($(".containerDetail")[0]) {
@@ -276,6 +267,7 @@ $(function(){
         x[i].style.display = "none";
         if(img.length < 0){img[0].style.display = "none";}
     }
+    console.log(img);
     if(img.length < 0){img[slideIndex-1].style.display = "inline-block";}
     x[slideIndex-1].style.display = "inline-block";
     x[slideIndex-1].style.width = "100%";
@@ -290,6 +282,16 @@ $(function(){
         n > 4 ? n = 1 : n;
     }, 5000);
  
+    /*****DETAIL*****/
+    //Rep l'id del enllaç selecionat i l'emmagatzema en localStorage
+    let categoryClicked = localStorage.getItem("category");
+    categoryClicked === "" ? categoryClicked = "architecture" : categoryClicked = categoryClicked;
+    let detailClicked = "";
+    console.log(categoryClicked);
+    setDetail(".card a");
+    setDetail(".navBigScreen a");
+
+    detailClicked = localStorage.getItem("detail");
 
     /*****NAV*****/
     //Modifica la variable clickedCategory
